@@ -24,6 +24,17 @@
             position: relative;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
         .navbar a {
             color: white;
             text-decoration: none;
@@ -178,11 +189,13 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">Himachal Blog</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="logo-container">
+            <div class="logo">Himachal Blog</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
         <div class="navbar-links">
             <a href="#home">Home</a>

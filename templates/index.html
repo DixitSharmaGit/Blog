@@ -7,6 +7,80 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+        }
+
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links a {
+            margin: 0 10px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .navbar-links a {
+                padding: 10px 0;
+                border-bottom: 1px solid #444;
+            }
+        }
+
         #home {
             background: url("{{ url_for('static', filename='image1.avif') }}") no-repeat center center/cover;
             color: rgb(10, 11, 11);
@@ -95,10 +169,18 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#blog">Blog</a>
-        <a href="#explore">Explore More</a>
-        <a href="#comments">Comments</a>
+        <div class="logo">Himachal Blog</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#blog">Blog</a>
+            <a href="#explore">Explore More</a>
+            <a href="#comments">Comments</a>
+        </div>
     </nav>
 
     <!-- Home Section -->
@@ -175,6 +257,11 @@
 
     <!-- Smooth Scroll JavaScript -->
     <script>
+        function toggleMenu() {
+            const navbarLinks = document.querySelector('.navbar-links');
+            navbarLinks.classList.toggle('active');
+        }
+
         document.querySelectorAll('.navbar a').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();

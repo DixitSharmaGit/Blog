@@ -21,6 +21,7 @@
             background-color: #333;
             padding: 10px 20px;
             color: white;
+            position: relative;
         }
 
         .navbar a {
@@ -48,6 +49,7 @@
 
         .navbar-links {
             display: flex;
+            align-items: center;
         }
 
         .navbar-links a {
@@ -69,6 +71,7 @@
                 right: 0;
                 width: 100%;
                 text-align: center;
+                z-index: 1000;
             }
 
             .navbar-links.active {
@@ -78,6 +81,11 @@
             .navbar-links a {
                 padding: 10px 0;
                 border-bottom: 1px solid #444;
+                width: 100%;
+            }
+
+            .navbar-links a:last-child {
+                border-bottom: none;
             }
         }
 
@@ -219,9 +227,9 @@
         <h1>Explore More on YouTube</h1>
         <p>Watch breathtaking videos of Himachal Pradesh’s beauty.</p>
         <div class="youtube-section">
-            <iframe class="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/VUrg_p7hj20?si=hepiaJE6jeNEc2Yz" frameborder="0" allowfullscreen></iframe>
-            <iframe class="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/RjycowVBDOQ?si=SPCT2CopvHeuey5V" frameborder="0" allowfullscreen></iframe>
-            <iframe class="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/N5UebWMxOJg?si=xetSAnzQPKOP3FQd" frameborder="0" allowfullscreen></iframe>
+            <iframe class="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/VUrg_p7hj20" frameborder="0" allowfullscreen></iframe>
+            <iframe class="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/RjycowVBDOQ" frameborder="0" allowfullscreen></iframe>
+            <iframe class="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/N5UebWMxOJg" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 

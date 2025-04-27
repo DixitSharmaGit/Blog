@@ -11,6 +11,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         /* Navbar Styles */
@@ -22,6 +23,8 @@
             padding: 10px 20px;
             color: white;
             position: relative;
+            width: 100%; /* Ensure the navbar spans the full width */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
 
         .logo-container {
@@ -33,6 +36,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin-right: 10px;
+            white-space: nowrap; /* Prevent text wrapping */
         }
 
         .navbar a {
@@ -49,6 +53,7 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            margin-left: 10px; /* Adds spacing between the logo and the hamburger */
         }
 
         .hamburger div {
@@ -99,6 +104,25 @@
             .navbar-links a:last-child {
                 border-bottom: none;
             }
+        }
+
+        /* Fix for Sections */
+        section {
+            width: 100%; /* Ensure sections do not exceed viewport width */
+            box-sizing: border-box; /* Include padding in width calculation */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Fix for Images */
+        img {
+            max-width: 100%; /* Ensure images do not exceed their container width */
+            height: auto;
+        }
+
+        /* Fix for YouTube Videos */
+        .youtube-video {
+            max-width: 100%; /* Ensure videos do not exceed their container width */
+            height: auto;
         }
 
         #home {

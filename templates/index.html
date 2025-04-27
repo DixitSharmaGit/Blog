@@ -68,8 +68,9 @@
                 background-color: #333;
                 position: absolute;
                 top: 50px;
-                right: 0;
-                width: 100%;
+                left: 0; /* Ensure it starts from the left edge */
+                right: 0; /* Ensure it ends at the right edge */
+                width: 100%; /* Full width */
                 text-align: center;
                 z-index: 1000;
             }
@@ -275,6 +276,10 @@
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
                 document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+
+                // Close the menu after clicking a link
+                const navbarLinks = document.querySelector('.navbar-links');
+                navbarLinks.classList.remove('active');
             });
         });
     </script>

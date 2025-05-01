@@ -9,8 +9,6 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env
-
-
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  # To remove warning

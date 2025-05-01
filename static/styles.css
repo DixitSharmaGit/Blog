@@ -201,3 +201,34 @@ html {
         width: 100%;
     }
 }
+
+/* Animation for Text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out; /* Apply fade-in animation */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+#home p {
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s ease-in-out; /* Apply fade-in animation with delay */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover Effect */
+#home h1:hover,
+#home p:hover {
+    color: #31d85a; /* Change text color on hover */
+}

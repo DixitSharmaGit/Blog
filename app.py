@@ -1,18 +1,22 @@
+import os
 from flask import (
     Flask, render_template, request, redirect,
     url_for, session, flash
 )
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import os
-
 from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env
+
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  # To remove warning
+
+# Correct database path using absolute path
+db_path = os.path.join(os.getcwd(), "instance", "database.db")
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{db_path}"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = os.getenv("SECRET_KEY")
+
 db = SQLAlchemy(app)
 
 # Admin credentials (can be moved to database later)
